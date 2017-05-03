@@ -1,0 +1,20 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Indie Flower', cursive;
+    background-color: #3c3b42;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+.header {
+    background-color: #c92902;
+    padding: 20px 20px;
+    margin: 0;
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    border-bottom: solid 5px #821a01;
+}
