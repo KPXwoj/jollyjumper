@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     font-family: 'Indie Flower', cursive;
     background-color: #3c3b42;
+    color: white;
 }
 
 *:focus {
@@ -17,4 +18,54 @@ html, body {
     font-size: 48px;
     text-align: center;
     border-bottom: solid 5px #821a01;
+}
+
+.content {
+    margin: 0;
+    padding: 50px;
+}
+
+.addingNumbers, .score {
+    margin: 0;
+    padding: 40px 0;;
+}
+
+.valueInput {
+    box-sizing: content-box;
+    border: solid 2px #c92902;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 24px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.addButton {
+    display: inline-block;
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    border: solid 2px #2d2c33;
+    background-color: #3a3942;
+    color: white;
+}
+
+.addButton img {
+    height: 15px;
+    width: 15px;
+}
+
+.addButton:hover {
+    background-color: #2d2c33;
+}
+
+.addButton:active {
+    background-color: #c92902;
 }

@@ -1,26 +1,32 @@
+var addButton = document.getElementById( 'addButton' ),
+    valueInput = document.getElementById( 'valueInput' );
+
+// actions
+addButton.addEventListener( 'click', function(e) {
+    console.log( 'add button clicked !' );
+});
+
+// Jolly jumper function
 function jollyJumper( numbers ) {
+    var existsNumbers = [];
     var isJollyJumper = false;
-    loop: for ( var i = 0; i < numbers.length; i++ ) {
-        var leftElements = numbers.length - ( i + 1 );
-        if (leftElements === 0) {
-            console.log( 'breaking loop -> !' );
-            break loop;
-        } else {
-            console.log( 'leftElements = ' + leftElements );
-            if ( Math.abs( numbers[i] - numbers[i + 1] ) === leftElements ) {
-                console.log( 'difference = ' + Math.abs( numbers[i] - numbers[i + 1] ) );
-                isJollyJumper = true;
-                continue loop;
+    mainLoop: for ( var i = 0; i < numbers.length; i++ ) {
+        var currentNumber = Math.abs( numbers[i] - numbers[i+1] );
+        arrayLoop: for ( var j = 0; j < numbers.length; j++ ) {
+            if ( existsNumbers[j] !== undefined ) {
+                if ( currentNumber === existsNumbers[j] ) {
+                    isJollyJumper = false;
+                    break mainLoop;
+                } else {
+                    existsNumbers.push( currentNumber );
+                    isJollyJumper = true;
+                    continue arrayLoop;
+                }
             } else {
-                console.log( 'breaking loop !' );
-                isJollyJumper = false;
-                break loop;
+                existsNumbers.push( currentNumber );
+                isJollyJumper = true;
             }
         }
     }
-    if ( isJollyJumper === true ) {
-        console.log( "Its JOLLY JUMPER !" );
-    } else {
-        console.log( "Its NOT jolly jumper!" );
-    }
+    isJollyJumper === true ? console.log( 'Its JOLLY JUMPER!' ) : console.log( 'Its NOT Jolly Jumper!' );
 }
